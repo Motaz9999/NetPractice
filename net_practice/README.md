@@ -1,23 +1,53 @@
 # 🌐 42 NetPractice: Ultimate Guide, Subnetting Tricks & Study Blueprint
 
-A complete reference and study companion for the **42 NetPractice** project. This guide covers core **Cisco networking fundamentals**, **foolproof subnetting shortcuts** (no manual binary conversion needed), **curated YouTube tutorials (NetworkChuck, Jeremy's IT Lab, etc.)**, and **AI prompts** to turn an LLM into your personal 42 peer-evaluator and drill instructor.
+A complete reference and study companion for the **42 NetPractice** project (`en.subject.pdf`). This guide covers the **official 42 subject rules & turn-in requirements**, core **Cisco networking fundamentals**, **foolproof subnetting shortcuts** (no manual binary conversion needed), **curated YouTube tutorials (NetworkChuck, Jeremy's IT Lab, etc.)**, and **AI prompts** to turn an LLM into your personal 42 peer-evaluator and drill instructor.
 
 ---
 
 ## 📑 Table of Contents
-1. [Project Overview & Quick Start](#-project-overview--quick-start)
-2. [Cisco Networking Basics & Core Concepts](#-cisco-networking-basics--core-concepts)
-3. [⚡ Subnetting Secrets & Mental Math Shortcuts](#-subnetting-secrets--mental-math-shortcuts)
-4. [NetPractice Golden Rules (The 5 Commandments)](#-netpractice-golden-rules-the-5-commandments)
-5. [📺 Curated YouTube Study Resources](#-curated-youtube-study-resources)
-6. [🤖 How to Practice with AI (Interactive Prompts)](#-how-to-practice-with-ai-interactive-prompts)
-7. [🎓 42 Peer Evaluation & Defense Prep](#-42-peer-evaluation--defense-prep)
+1. [📋 42 Subject Requirements & Turn-in Rules](#-42-subject-requirements--turn-in-rules)
+2. [🚀 Project Overview & Quick Start](#-project-overview--quick-start)
+3. [🧠 Cisco Networking Basics & Core Concepts](#-cisco-networking-basics--core-concepts)
+4. [⚡ Subnetting Secrets & Mental Math Shortcuts](#-subnetting-secrets--mental-math-shortcuts)
+5. [🎯 NetPractice Golden Rules (The 5 Commandments)](#-netpractice-golden-rules-the-5-commandments)
+6. [📺 Curated YouTube Study Resources](#-curated-youtube-study-resources)
+7. [🤖 How to Practice with AI (Interactive Prompts)](#-how-to-practice-with-ai-interactive-prompts)
+8. [🎓 42 Peer Evaluation & Defense Prep](#-42-peer-evaluation--defense-prep)
+
+---
+
+## 📋 42 Subject Requirements & Turn-in Rules
+
+According to the official 42 project subject (`en.subject.pdf`):
+
+### 1. The Core Assignment
+- **10 Training Levels**: You must solve 10 simulated network configuration exercises in the browser interface.
+- **Practice Mode vs. Correction Mode**:
+  - **Practice Mode**: You **MUST enter your 42 intra login** in the login box before solving levels. The simulation generates address parameters based on your login seed.
+  - **Correction Mode**: Leave the login field empty (used by peer evaluators during the defense).
+- **Interface Controls**:
+  - **Unshaded fields**: Editable fields where you type IP addresses, subnet masks, and routing entries.
+  - **Shaded fields**: Fixed fields that cannot be modified.
+  - **"Check again"**: Simulates packet transmission and displays green/red status plus error logs at the bottom.
+  - **"Get my config"**: **Crucial step!** Once all checks pass, click this button to export and download your configuration file for that level.
+
+### 2. Turn-in & Submission Rules
+- **Deliverables**: Exactly **10 configuration files** (one exported file per level, `level1` through `level10`).
+- **Placement**: All 10 config files must be placed directly at the **root of your Git repository**.
+- **Personal Seed**: Each file must correspond to your personal 42 login. If you turn in files generated under another login or with an empty login, your submission will be invalid.
+
+### 3. Peer-Evaluation / Defense Format
+- Only files committed to your Git repository are graded.
+- During evaluation, your peer evaluator will:
+  1. Verify the 10 configuration files in your repository.
+  2. Ask theoretical networking questions (IP classes, masks, routers vs switches, routing tables).
+  3. **Live Test**: Require you to solve **random levels** (typically 3 random levels chosen from levels 6 through 10) live on the training platform within a ~15-minute time limit to prove you understand the logic rather than memorizing numbers.
 
 ---
 
 ## 🚀 Project Overview & Quick Start
 
-NetPractice is a visual, browser-based training simulator designed to teach you the fundamentals of **IPv4 networking**, **CIDR subnetting**, and **routing tables**. You are presented with 10 progressively complex network topologies where you must configure IP addresses, subnet masks, and routing entries so all specified nodes can communicate.
+NetPractice is a visual, browser-based training simulator designed to teach you the fundamentals of **IPv4 networking**, **CIDR subnetting**, and **routing tables**.
 
 ### How to Run Locally
 Ensure you have `python3` installed on your machine, then run:
@@ -221,4 +251,3 @@ During your peer review, you must be able to justify every single number you typ
    - Check the **return route**. Sending the packet is only half the battle; the destination host must know how to route responses back to the sender.
 4. **"Why is the next-hop field empty in some routes?"**
    - When a network is directly connected to the router's own interface, no next-hop IP is needed (or it routes directly via interface). Next hop is only needed to reach remote networks through neighboring gateways.
-
